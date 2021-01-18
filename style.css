@@ -14,6 +14,7 @@ html {
 body {
   font-family: "Montserrat";
   background: #1f1f1f;
+  overflow: hidden;
 }
 
 a {
@@ -93,16 +94,6 @@ li:hover .navi {
   transform: scale(1, 1);
 }
 
-.hm {
-  margin-top: 30rem;
-  text-align: center;
-  font-size: 5rem;
-}
-
-.hm:hover {
-  transform: rotate(360deg) scale(2);
-}
-
 .glow {
   height: 30vh;
   width: 100%;
@@ -119,4 +110,43 @@ li:hover .navi {
 .glow span:hover {
   font-size: 25rem;
   color: rgb(0, 132, 255);
+}
+
+@media screen and (max-width: 1000px) {
+  nav {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  ul {
+    margin-top: 1rem;
+  }
+  li {
+    text-align: center;
+  }
+
+  .navi {
+    position: absolute;
+    top: -10%;
+    right: 50%;
+
+    width: 40%;
+    height: 5px;
+    background: white;
+    transform-origin: right;
+    transform: translateX(100%) scale(0, 1);
+    transition: all 0.3s ease-in-out;
+  }
+  li:hover .navi {
+    transform: translateX(50%) scale(1.5, 1);
+  }
+  .glow span {
+    font-size: 10rem;
+    color: #1f1f1f;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .glow span:hover {
+    font-size: 12rem;
+    color: rgb(0, 132, 255);
+  }
 }
